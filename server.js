@@ -7,7 +7,7 @@ const middlewares = jsonServer.defaults();
 
 // Configure CORS for Vercel
 const allowedOrigins = [
-  'https://your-frontend.vercel.app',
+  'https://e-commerce-admin-portal-1gzyxsw2e-riq32s-projects.vercel.app',
   'http://localhost:3000',
   'http://localhost:5173' // Vite default port
 ];
