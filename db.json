@@ -1,14 +1,4 @@
 {
-  "store_info": [
-    {
-      "id": "1",
-      "name": "Coffee R Us",
-      "description": "The go to store for premium coffee beans from around the world",
-      "phone_number": "555-1234",
-      "email": "contact@coffeerus.com",
-      "address": "123 Coffee Lane, Brewtown, CA 94123"
-    }
-  ],
   "products": [
     {
       "id": "1",
