@@ -1,0 +1,36 @@
+.app-footer {
+  background-color: var(--secondary-color);
+  color: var(--text-white);
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links span {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .app-footer {
+    padding: 1rem;
+  }
+}
