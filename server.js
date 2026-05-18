@@ -23,8 +23,166 @@ try {
   console.log('⚠️ No db.json found, using empty database');
   db = {
     store_info: [{ id: 1, name: "Coffee R Us", description: "Premium coffee store", phone_number: "555-1234" }],
-    products: []
-  };
+    products: [ 
+    {
+      "id": "1",
+      "name": "Vanilla Bean",
+      "description": "Medium Roast with sweet vanilla undertones and nutty flavor profile",
+      "origin": "Colombia",
+      "price": 10,
+      "category": "Medium Roast",
+      "stock": 45,
+      "image_url": "https://plus.unsplash.com/premium_photo-1675237625845-ed58c887f3cf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "roast_level": "Medium",
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "name": "House Blend",
+      "description": "Dark Roast with rich chocolate notes and smooth finish",
+      "origin": "Vietnam",
+      "price": 12,
+      "category": "Dark Roast",
+      "stock": 32,
+      "image_url": "https://images.unsplash.com/photo-1609595781571-eaf55401969c?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "roast_level": "Dark",
+      "inStock": true
+    },
+    {
+      "id": "4",
+      "name": "Espresso Royale",
+      "description": "Extra Dark Roast, intense flavor perfect for espresso drinks",
+      "origin": "Italy",
+      "price": 15,
+      "category": "Espresso",
+      "stock": 19,
+      "image_url": "https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "roast_level": "Extra Dark",
+      "inStock": true
+    },
+    {
+      "name": "Macha Cafe",
+      "description": "White drink with creamy matcha flavor and subtle sweetness",
+      "origin": "South Africa",
+      "price": 5,
+      "stock": 3,
+      "category": "Blend",
+      "roast_level": "Extra Dark",
+      "inStock": true,
+      "image_url": "https://plus.unsplash.com/premium_photo-1723759448747-1d174225e61f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "5"
+    },
+    {
+      "name": "Capuccino",
+      "description": "A rich Italian coffee drink made with espresso, steamed milk, and a thick layer of milk foam. It has a smooth, creamy texture with a balanced coffee flavor",
+      "origin": "Italy",
+      "price": 30,
+      "stock": 45,
+      "category": "Hot Coffee",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "DkwTq16tyD4"
+    },
+    {
+      "name": "Americano",
+      "description": "A strong yet smooth coffee prepared by diluting espresso with hot water. It delivers a bold flavor similar to brewed coffee but with a richer aroma.",
+      "origin": "United States",
+      "price": 60,
+      "stock": 30,
+      "category": "Hot Coffee",
+      "roast_level": "Dark",
+      "inStock": true,
+      "image_url": "https://images.unsplash.com/photo-1551030173-122aabc4489c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "W9nusWv48cA"
+    },
+    {
+      "name": "Affogato",
+      "description": "A dessert-style coffee made with pouring hot espresso over vanilla ice cream or gelato, creating a sweet and creamy combination of hot and cold flavors.",
+      "origin": "Italy",
+      "price": 46,
+      "stock": 20,
+      "category": "Dessert Coffee",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://images.unsplash.com/photo-1696522692156-7340b681c3bb?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "nghuY-aZWSI"
+    },
+    {
+      "name": "Cold Brew",
+      "description": "Coffee slowly brewed in cold water for several hours producing a smooth, less acidic and refreshing drink often served chilled over ice.",
+      "origin": "United States",
+      "price": 34,
+      "stock": 15,
+      "category": "Iced coffee",
+      "roast_level": "Dark",
+      "inStock": true,
+      "image_url": "https://plus.unsplash.com/premium_photo-1671088575920-09f2a5970574?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "A8JQAuLQkuI"
+    },
+    {
+      "name": "Coconut Coffee ",
+      "description": "A tropical-inspired coffee infused with coconut flavor offering a creamy slightly sweet taste with refreshing exotic aroma.",
+      "origin": "Tropical Blend",
+      "price": 42,
+      "stock": 25,
+      "category": "Flavored Coffee",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://plus.unsplash.com/premium_photo-1695028377683-cc714ade8390?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "ARU-PbZQQOg"
+    },
+    {
+      "name": "Cinammon Spice",
+      "description": "A warm and aromatic coffee blended with cinammon spice delivering a comforting flavor with mild sweetness and spicy notes.",
+      "origin": "Mexico",
+      "price": 38,
+      "stock": 14,
+      "category": "Spiced Coffee",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://media.istockphoto.com/id/1480359398/photo/warm-dirty-chai-latte.jpg?s=1024x1024&w=is&k=20&c=ux24WZYVGP0YEU8zlMSFLuOadCsVLGOYLCzYlAJkwOU=",
+      "id": "L_XAYyHhuH8"
+    },
+    {
+      "name": "Chocolate Truffle",
+      "description": "A luxurious coffee blended with deep chocolate flavors inspired by chocolate truffles creating a rich creamy and indulgent experience.",
+      "origin": "Belgium",
+      "price": 47,
+      "stock": 22,
+      "category": "Flavored Coffee",
+      "roast_level": "Dark",
+      "inStock": true,
+      "image_url": "https://images.unsplash.com/photo-1523529733369-8c9cf7593bdc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "0p7ur4I5fuw"
+    },
+    {
+      "name": "French Vanilla",
+      "description": "A soft and creamy coffee infused with sweet vanilla flavor known for its smooth aroma and mild sweetness",
+      "origin": "France",
+      "price": 22.5,
+      "stock": 6,
+      "category": "Flavored Coffee",
+      "roast_level": "Light",
+      "inStock": true,
+      "image_url": "https://plus.unsplash.com/premium_photo-1677607236617-aecfe677388f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "PTtdjneKvBM"
+    },
+    {
+      "name": "Pumpkin Spice",
+      "description": "A seasonal coffee flavored with pumpkin, cinammon, nutmeg, and cloves giving it a warm, sweet amd comforting autumn-inspired taste.",
+      "origin": "United States",
+      "price": 45,
+      "stock": 6,
+      "category": "Seasonal coffee",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://images.unsplash.com/photo-1634221805920-3a216597f457?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "mq9B_Z-2mX4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
 }
 
 // In-memory storage (for updates)

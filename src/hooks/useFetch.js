@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 const normalizeApiUrl = (url) => {
-  if (API_BASE_URL !== '/api' && url.startsWith('/api')) {
+  if (API_BASE_URL && url.startsWith('/api')) {
     return url.replace(/^\/api/, '');
   }
   return url;
@@ -20,6 +20,7 @@ export const useFetch = (url, options = { method: 'GET' }) => {
     
     try {
       const response = await axios({
+        baseURL: API_BASE_URL,
         url: normalizeApiUrl(url),
         ...options,
         headers: {
@@ -56,6 +57,7 @@ export const usePost = () => {
     
     try {
       const response = await axios.post(normalizeApiUrl(url), payload, {
+        baseURL: API_BASE_URL,
         headers: { 'Content-Type': 'application/json' }
       });
       return response.data;
@@ -82,7 +84,8 @@ export const usePatch = () => {
     setError(null);
     
     try {
-      const response = await axios.patch(url, updateData, {
+      const response = await axios.patch(normalizeApiUrl(url), updateData, {
+        baseURL: API_BASE_URL,
         headers: { 'Content-Type': 'application/json' }
       });
       return response.data;
