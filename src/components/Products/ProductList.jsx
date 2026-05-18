@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useStore } from '../../contexts/StoreContext';
 import { useFetch } from '../../hooks/useFetch';
 import { useSearch } from '../../hooks/useSearch';
+import { deleteProduct } from '../../utils/api';
 import SearchBar from '../Search/SearchBar';
 import ProductCard from './ProductCard';
 import LoadingSpinner from '../Common/LoadingSpinner';
@@ -41,19 +42,10 @@ const ProductList = () => {
   // Delete product function
   const handleDeleteProduct = async (productId) => {
     try {
-      const response = await fetch(`http://localhost:5000/products/${productId}`, {
-        method: 'DELETE',
-      });
-      
-      if (response.ok) {
-        // Update local state
-        setProducts(products.filter(product => product.id !== productId));
-        // Refresh data to sync with server
-        refreshData();
-        alert('Product deleted successfully!');
-      } else {
-        throw new Error('Failed to delete product');
-      }
+      await deleteProduct(productId);
+      setProducts(products.filter(product => product.id !== productId));
+      refreshData();
+      alert('Product deleted successfully!');
     } catch (err) {
       console.error('Error deleting product:', err);
       alert('Failed to delete product. Please try again.');

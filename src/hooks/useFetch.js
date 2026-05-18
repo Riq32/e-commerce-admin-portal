@@ -1,6 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const normalizeApiUrl = (url) => {
+  if (API_BASE_URL !== '/api' && url.startsWith('/api')) {
+    return url.replace(/^\/api/, '');
+  }
+  return url;
+};
+
 export const useFetch = (url, options = { method: 'GET' }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -12,7 +20,7 @@ export const useFetch = (url, options = { method: 'GET' }) => {
     
     try {
       const response = await axios({
-        url,
+        url: normalizeApiUrl(url),
         ...options,
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +55,7 @@ export const usePost = () => {
     setError(null);
     
     try {
-      const response = await axios.post(url, postData, {
+      const response = await axios.patch(normalizeApiUrl(url), updateData, {
         headers: { 'Content-Type': 'application/json' }
       });
       return response.data;

@@ -1,4 +1,14 @@
 {
+    "store_info": [
+    {
+      "id": 1,
+      "name": "Coffee R Us",
+      "description": "The go to store for premium coffee beans",
+      "phone_number": "555-1234",
+      "email": "contact@coffeerus.com",
+      "address": "123 Coffee Lane"
+    }
+  ],
   "products": [
     {
       "id": "1",
