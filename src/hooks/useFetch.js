@@ -50,12 +50,12 @@ export const usePost = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const postData = useCallback(async (url, postData) => {
+  const postData = useCallback(async (url, payload) => {
     setLoading(true);
     setError(null);
     
     try {
-      const response = await axios.patch(normalizeApiUrl(url), updateData, {
+      const response = await axios.post(normalizeApiUrl(url), payload, {
         headers: { 'Content-Type': 'application/json' }
       });
       return response.data;

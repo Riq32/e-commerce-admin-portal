@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStore } from '../../contexts/StoreContext';
 import { useFetch } from '../../hooks/useFetch';
 import LoadingSpinner from '../Common/LoadingSpinner';
@@ -7,10 +7,13 @@ import './LandingPage.css';
 
 const LandingPage = () => {
   const { storeInfo, setStoreInfo } = useStore();
-  const { loading, error } = useFetch('/api/store_info/1', {
-    method: 'GET',
-    onSuccess: (data) => setStoreInfo(data)
-  });
+  const { data, loading, error } = useFetch('/api/store_info/1');
+
+  useEffect(() => {
+    if (data) {
+      setStoreInfo(data);
+    }
+  }, [data, setStoreInfo]);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} />;

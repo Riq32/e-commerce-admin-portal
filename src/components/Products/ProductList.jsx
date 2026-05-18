@@ -21,7 +21,13 @@ const ProductList = () => {
 
   useEffect(() => {
     if (data) {
-      setProducts(data);
+      // Ensure data is an array before setting
+      if (Array.isArray(data)) {
+        setProducts(data);
+      } else {
+        console.warn('Expected array from API /products, got:', typeof data, data);
+        setProducts([]);
+      }
     }
   }, [data, setProducts]);
 
