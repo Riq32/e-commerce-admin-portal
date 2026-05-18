@@ -1,6 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const fs = require('fs');
+import express from 'express';
+import cors from 'cors';
+import fs from 'fs';
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
