@@ -1,7 +1,7 @@
 {
-    "store_info": [
+  "store_info": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Coffee R Us",
       "description": "The go to store for premium coffee beans",
       "phone_number": "555-1234",
@@ -165,6 +165,18 @@
       "inStock": true,
       "image_url": "https://images.unsplash.com/photo-1634221805920-3a216597f457?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "id": "mq9B_Z-2mX4"
+    },
+    {
+      "name": "Machiatto coffee",
+      "description": "Smooth drink with spicy taste.",
+      "origin": "Colombia",
+      "price": 22,
+      "stock": 12,
+      "category": "Blend",
+      "roast_level": "Medium",
+      "inStock": true,
+      "image_url": "https://images.pexels.com/photos/30226618/pexels-photo-30226618.jpeg",
+      "id": "r7b_lU7Wm4c"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
